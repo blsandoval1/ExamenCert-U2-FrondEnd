@@ -1,0 +1,61 @@
+<br>
+<br>
+<div class="container">
+    <div class="d-flex justify-content-around">
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faChalkboardTeacher'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Nombre del solicitante</small>
+                <p class="h6"><strong>{{beca.solicitante}}</strong></p>
+            </div>
+        </div>
+
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faAward'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Tipo beca</small>
+                <p class="h6"><strong>{{beca.tipo_beca }}</strong></p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faUniversity'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Semestre</small>
+                <p class="h6"><strong>{{beca.semestre }}</strong></p>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+
+    <div class="d-flex justify-content-around">
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faCalendarAlt'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Fecha de solicitud</small>
+                <p class="h6"><strong>{{beca.fecha_pedido| date:'longDate'}}</strong></p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left">
+                <fa-icon class="mr-3 fa-2x" [icon]='faBookReader'></fa-icon>
+            </div>
+            <div class="media-body">
+                <small class="media-heading">Promedio general</small>
+                <p class="h6"><strong>{{beca.promedio_general }}</strong></p>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+    <button [routerLink]="['/beca/list']" class=" btn btn-info"><fa-icon [icon]="faArrowAltCircleLeft"></fa-icon> Volver</button>
+    <br>

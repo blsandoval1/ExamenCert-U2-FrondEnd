@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="text-center">
+        <br>
+        <h3>{{title}}</h3>
+        <fa-icon class="fa-2x" [icon]="faUserTie"></fa-icon>
+    </div>
+    <hr>
+</div>
+<div class=" row-3">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="user">
+        <!-- Nombre del solicitante -->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]='faChalkboardTeacher'></fa-icon></span>
+            </div>
+            <input formControlName="solicitante" type="text" class="form-control form-control-user" [(ngModel)]="beca.solicitante" placeholder="Nombre y apellido... " />
+        </div>
+        <!--Tipo beca-->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]='faAward'></fa-icon></span>
+            </div>
+            <select formControlName="tipo_beca" [(ngModel)]="beca.tipo_beca" class="form-control form-control-user">
+                        <option value="Carencia de recursos">Carencia de recursos</option>
+                        <option value="Discapacidad">Discapacidad</option>
+                        <option value="Excelencia académica">Excelencia académica</option>
+                        <option value="Excelencia deportiva">Excelencia deportiva</option>      
+                        <option value="Movilización">Movilización</option>      
+                </select>
+        </div>
+        <!--Semestre-->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]='faUniversity'></fa-icon></span>
+            </div>
+            <select formControlName="semestre" [(ngModel)]="beca.semestre" class="form-control form-control-user">
+                        <option value="Primer nivel">Primer nivel</option>
+                        <option value="Segundo nivel">Segundo nivel</option>
+                        <option value="Tercer nivel">Tercer nivel</option>
+                        <option value="Cuarto nivel">Cuarto nivel</option>
+                        <option value="Quinto nivel">Quinto nivel</option>
+                        <option value="Sexto nivel">Sexto nivel</option>
+                        <option value="Septimo nivel">Septimo nivel</option>
+                        <option value="Octavo nivel">Octavo nivel</option>
+                        <option value="Noveno nivel">Noveno nivel</option>
+                </select>
+        </div>
+        <!--Fecha pedido-->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]='faCalendarAlt'></fa-icon></span>
+            </div>
+            <input formControlName="fecha_pedido" type="date" class="form-control form-control-user" [(ngModel)]="beca.fecha_pedido" placeholder="Fecha de solicitud... " />
+        </div>
+        <!--Promedio general-->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]='faBookReader'></fa-icon></span>
+            </div>
+            <input formControlName="promedio_general" type="text" class="form-control form-control-user" [(ngModel)]="beca.promedio_general" placeholder="Promedio general... " />
+        </div>
+        <div class="btn-group ">
+            <button type="submit" class="btn btn-success">
+                        <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar
+                    </button>
+            <button type="reset" (click)="onReset()" class="btn btn-danger text-center">
+                        <fa-icon [icon]='faTimes'></fa-icon>&nbsp;Cancelar
+                    </button>
+        </div>
+    </form>
+</div>

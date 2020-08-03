@@ -1,0 +1,38 @@
+<br>
+<div class="container">
+    <br>
+    <h3>Listado de Alumnos que solicitarion una BECA</h3>
+    <br>
+    <div class=" row-3">
+        <table class="table table-hovered">
+            <thead class=" thead-light">
+                <tr>
+                    <th>N°</th>
+                    <th>Solicitante </th>
+                    <th>Tipo Beca</th>
+                    <th>Semestre</th>
+                    <th>Promedio General</th>
+                    <th>
+                        <button [routerLink]="['/beca/form']" class=" zoom btn btn-info"><fa-icon [icon]="faPlus"></fa-icon>&nbsp;Agregar</button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of becas; let i = index">
+                    <td class="rollover">{{i|masmas}}</td>
+                    <td class="rollover">{{item.solicitante}}</td>
+                    <td class="rollover">{{item.tipo_beca}}</td>
+                    <td class="rollover">{{item.semestre}}</td>
+                    <td class="rollover">{{ item.promedio_general }}</td>
+                    <td>
+                        <button [routerLink]="['/beca/card', item.idbeca]" class=" zoom btn btn-sm btn-info"><fa-icon [icon]="faEye"></fa-icon></button>
+                        <button [routerLink]="['/beca/form', item.idbeca]" class=" zoom btn btn-sm btn-warning"><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+                        <button (click)="delete(item)" class=" zoom btn btn-sm btn-danger"><fa-icon [icon]="faTrash"></fa-icon></button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+</div>

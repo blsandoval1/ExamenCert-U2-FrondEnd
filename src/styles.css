@@ -1,0 +1,23 @@
+td.rollover:hover {
+    background-color: lightsteelblue;
+}
+
+button.zoom {
+    /* Aumentamos la anchura y altura durante 2 segundos */
+    transition: width 1s, height 1s, transform 1s;
+    -moz-transition: width 1s, height 1s, -moz-transform 1s;
+    -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
+    -o-transition: width 1s, height 1s, -o-transform 1s;
+}
+
+button.zoom:hover {
+    /* tranformamos el elemento al pasar el mouse por encima al doble de
+       su tamaño con scale(2). */
+    transform: scale();
+    -moz-transform: scale(2);
+    /* Firefox */
+    -webkit-transform: scale(2);
+    /* Chrome - Safari */
+    -o-transform: scale(1);
+    /* Opera */
+}
